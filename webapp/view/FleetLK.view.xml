@@ -1,0 +1,44 @@
+<mvc:View controllerName="fleetlk.controller.FleetLK"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+        <headerContent>
+            <OverflowToolbar id="_IDGenOverflowToolbar2">
+                <Title id="_IDGenTitle1" text="Fleet Count is ({= ${fleetDataModel>/}.length })" level="H2"/>
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                <Button id="_IDGenButton4" icon="sap-icon://excel-attachment" tooltip="Export to Excel" press=".onExport"/>
+                <Button id="_IDGenButton5" text="Add New Airplane" press=".onAddNewRecord" />
+                <Button id="_IDGenButton6" text="Edit Airplane" press=".editAirlineRecord" />
+            </OverflowToolbar>
+        </headerContent>
+
+        <Table
+            id="fleetTable"
+            inset="false"
+            mode="SingleSelectLeft"
+            items="{path: 'fleetDataModel>/'}">
+
+            <columns>
+                <Column id="_IDGenColumn8"><Text id="_IDGenText14" text="{i18n>registration}" /></Column>
+                <Column id="_IDGenColumn9"><Text id="_IDGenText15" text="{i18n>model}" /></Column>
+                <Column id="_IDGenColumn11"><Text id="_IDGenText17" text="{i18n>lastInspection}" /></Column>
+                <Column id="_IDGenColumn12"><Text id="_IDGenText18" text="{i18n>totalHours}" /></Column>
+                <Column id="_IDGenColumn10"><Text id="_IDGenText16" text="{i18n>status}" /></Column>
+            </columns>
+
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem1" vAlign="Middle" type="Navigation" press=".onRowPress" 
+					highlight="{= ${fleetDataModel>Url} ? 'Information' : 'None' }">
+                    <cells>
+                        <Text id="_IDGenText19" text="{fleetDataModel>Registration}" wrapping="false" />
+                        <Text id="_IDGenText20" text="{fleetDataModel>Model}" wrapping="false"/>
+                        <Text id="_IDGenText21" text="{fleetDataModel>LastInspection}" wrapping="false"/>
+                        <Text id="_IDGenText22" text="{fleetDataModel>TotalHours}" wrapping="false"/>
+                        <Text id="_IDGenText23" text="{fleetDataModel>Status}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
