@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+	<Dialog id="createDialog" title="Create new fleet">
+        <content>
+            <form:SimpleForm id="simpleFormCreateDialog">
+                <form:content>
+                    <Label id="label_6" text="{i18n>registration}" required="true" />
+                    <Input id="registrationIDInput" editable="true" />
+
+                    <Label id="label_1" text="{i18n>model}" required="true"/>
+                    <Input id="modelIDInput" editable="true" />
+<!-- 
+                    <Label id="label_2" text="{i18n>totalHours}" />
+                    <Input id="totalHoursIDInput" editable="true" /> -->
+
+                    <InputListItem id="_IDGenInputListItem" label="Status">
+                        <Select id="statusIDInput">
+                            <core:Item id="_IDGenItem" key="In Service" text="In Service" />
+                            <core:Item id="_IDGenItem1" key="Out of Service" text="Out of Service" />
+                            <core:Item id="_IDGenItem2" key="Under Maintenance" text="Under Maintenance" />
+                            <core:Item id="_IDGenItem3" key="Retired" text="Retired" />
+                        </Select>
+                    </InputListItem>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="createUpd" text="Create" press=".onCreateNewRecord" />
+        </beginButton>
+        <endButton>
+            <Button id="cancelUpd" text="Cancel" press=".onCancelRecord" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

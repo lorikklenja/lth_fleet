@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+	
+    <Dialog id="editFleetDialog" title="Edit Status">
+
+        <content>
+            <form:SimpleForm
+                id="editFormDialog"
+                editable="true">
+
+                <form:content>
+
+                    <Label id="_IDGenLabel4" text="{i18n>registration}" />
+                    <Input id="_IDGenInput" value="{fleetDataModel>Registration}" editable="false"/>
+
+                    <Label id="_IDGenLabel"  text="{i18n>model}" />
+                    <Input id="_IDGenInput5"  value="{fleetDataModel>Model}" editable="false"/>
+
+                    <InputListItem id="_IDGenInputListItem1" label="Status">
+                    <HBox id="_IDGenHBox" alignItems="Center">
+                        <Select id="_IDGenSelect1" selectedKey="{fleetDataModel>Status}">
+                            <core:Item id="_IDGenItem4"  key="In Service" text="In Service" />
+                            <core:Item id="_IDGenItem5"  key="Out of Service" text="Out of Service" />
+                            <core:Item id="_IDGenItem6"  key="Under Maintenance" text="Under Maintenance" />
+                            <core:Item id="_IDGenItem7"  key="Retired" text="Retired" />
+                        </Select>
+                    </HBox>
+                    </InputListItem>
+
+                </form:content>
+            </form:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button id="_IDGenButton" text="Save" press=".onSaveEditRecord" />
+        </beginButton>
+
+        <endButton>
+            <Button id="_IDGenButton1" text="Cancel" press=".onCancelEditRecord" />
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>
