@@ -80,6 +80,7 @@
                 <Property Name="Edit_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="to_PartsLK_oc" Type="Edm.Boolean" sap:label="Dynamic CbA-Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
                 <Property Name="UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="Registration" Type="Edm.String" MaxLength="10" sap:label="Registration"/>
                 <Property Name="Model" Type="Edm.String" MaxLength="20" sap:label="Model"/>
@@ -106,16 +107,18 @@
                     <PropertyRef Name="ParentUuid"/>
                     <PropertyRef Name="IsActiveEntity"/>
                 </Key>
-                <Property Name="Uuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
-                <Property Name="ParentUuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:updatable="false"/>
+                <Property Name="ParentUuid" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="PartName" Type="Edm.String" MaxLength="40" sap:label="Part Name"/>
                 <Property Name="ConditionText" Type="Edm.String" MaxLength="20" sap:label="Condition"/>
                 <Property Name="InspectionDue" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Inspection Due Date"/>
-                <Property Name="LocalCreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Created By User"/>
-                <Property Name="LocalCreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created On" sap:quickinfo="Creation Date Time"/>
-                <Property Name="LocalLastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By" sap:quickinfo="Local Instance Last Changed By User"/>
-                <Property Name="LocalLastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed On" sap:quickinfo="Local Instance Last Change Date Time"/>
-                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed On" sap:quickinfo="Last Change Date Time"/>
+                <Property Name="LocalCreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="Created By User" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LocalCreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created On" sap:quickinfo="Creation Date Time" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LocalLastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By" sap:quickinfo="Local Instance Last Changed By User" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LocalLastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed On" sap:quickinfo="Local Instance Last Change Date Time" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed On" sap:quickinfo="Last Change Date Time" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:label="Has Draft" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:creatable="false" sap:updatable="false"/>
                 <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:creatable="false" sap:updatable="false"/>
@@ -417,7 +420,7 @@
                 <EntitySet Name="I_DraftAdministrativeData" EntityType="cds_zui_fleet_lk_o4.I_DraftAdministrativeDataType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="I_DraftAdministrativeUserVH" EntityType="cds_zui_fleet_lk_o4.I_DraftAdministrativeUserVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
                 <EntitySet Name="FleetLK" EntityType="cds_zui_fleet_lk_o4.FleetLKType" sap:content-version="1" sap:deletable-path="Delete_mc" sap:updatable-path="Update_mc"/>
-                <EntitySet Name="PartsLK" EntityType="cds_zui_fleet_lk_o4.PartsLKType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="PartsLK" EntityType="cds_zui_fleet_lk_o4.PartsLKType" sap:content-version="1" sap:deletable-path="Delete_mc" sap:updatable-path="Update_mc"/>
                 <EntitySet Name="SAP__FormatSet" EntityType="cds_zui_fleet_lk_o4.SAP__Format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__PDFStandardSet" EntityType="cds_zui_fleet_lk_o4.SAP__PDFStandard" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__TableColumnsSet" EntityType="cds_zui_fleet_lk_o4.SAP__TableColumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
@@ -491,6 +494,17 @@
                     <Parameter Name="UUID" Type="Edm.Guid" Mode="In" sap:label="UUID"/>
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In" sap:label="Is active"/>
                 </FunctionImport>
+                <FunctionImport Name="create_fleet" ReturnType="cds_zui_fleet_lk_o4.DummyFunctionImportResult" m:HttpMethod="POST">
+                    <Parameter Name="Registration" Type="Edm.String" Mode="In" MaxLength="10" Nullable="true"/>
+                    <Parameter Name="Model" Type="Edm.String" Mode="In" MaxLength="20" Nullable="true"/>
+                    <Parameter Name="Status" Type="Edm.String" Mode="In" MaxLength="20" Nullable="true"/>
+                    <Parameter Name="last_inspection" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:display-format="Date"/>
+                </FunctionImport>
+                <FunctionImport Name="create_parts" ReturnType="cds_zui_fleet_lk_o4.DummyFunctionImportResult" m:HttpMethod="POST">
+                    <Parameter Name="part_name" Type="Edm.String" Mode="In" MaxLength="40" Nullable="true"/>
+                    <Parameter Name="condition_text" Type="Edm.String" Mode="In" MaxLength="20" Nullable="true"/>
+                    <Parameter Name="inspection_due" Type="Edm.DateTime" Mode="In" Precision="0" Nullable="true" sap:display-format="Date"/>
+                </FunctionImport>
                 <FunctionImport Name="FleetLKDiscard" ReturnType="cds_zui_fleet_lk_o4.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zui_fleet_lk_o4.FleetLKType">
                     <Parameter Name="UUID" Type="Edm.Guid" Mode="In" sap:label="UUID"/>
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In" sap:label="Is active"/>
@@ -532,6 +546,7 @@
                                 <PropertyPath>Edit_ac</PropertyPath>
                                 <PropertyPath>Delete_mc</PropertyPath>
                                 <PropertyPath>Update_mc</PropertyPath>
+                                <PropertyPath>to_PartsLK_oc</PropertyPath>
                             </Collection>
                         </PropertyValue>
                         <PropertyValue Property="FilterExpressionRestrictions">
@@ -577,7 +592,7 @@
                                     <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_PartsLK"/>
                                     <PropertyValue Property="InsertRestrictions">
                                         <Record>
-                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                            <PropertyValue Property="Insertable" Path="to_PartsLK_oc"/>
                                         </Record>
                                     </PropertyValue>
                                 </Record>
@@ -597,12 +612,18 @@
                                 <PropertyPath>Edit_ac</PropertyPath>
                                 <PropertyPath>Delete_mc</PropertyPath>
                                 <PropertyPath>Update_mc</PropertyPath>
+                                <PropertyPath>to_PartsLK_oc</PropertyPath>
                             </Collection>
                         </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="Capabilities.UpdateRestrictions">
                     <Record>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>to_PartsLK</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
                         <PropertyValue Property="Updatable" Path="Update_mc"/>
                     </Record>
                 </Annotation>
@@ -616,11 +637,17 @@
                 </Annotation>
                 <Annotation Term="Capabilities.DeleteRestrictions">
                     <Record>
-                        <PropertyValue Property="Deletable" Bool="false"/>
+                        <PropertyValue Property="Deletable" Path="Delete_mc"/>
                     </Record>
                 </Annotation>
                 <Annotation Term="Capabilities.FilterRestrictions">
                     <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Delete_mc</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
                         <PropertyValue Property="FilterExpressionRestrictions">
                             <Collection>
                                 <Record>
@@ -633,11 +660,6 @@
                                 </Record>
                             </Collection>
                         </PropertyValue>
-                    </Record>
-                </Annotation>
-                <Annotation Term="Capabilities.InsertRestrictions">
-                    <Record>
-                        <PropertyValue Property="Insertable" Bool="false"/>
                     </Record>
                 </Annotation>
                 <Annotation Term="Capabilities.NavigationRestrictions">
@@ -672,9 +694,27 @@
                         </PropertyValue>
                     </Record>
                 </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Delete_mc</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
                 <Annotation Term="Capabilities.UpdateRestrictions">
                     <Record>
-                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>to_FleetLK</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Updatable" Path="Update_mc"/>
                     </Record>
                 </Annotation>
             </Annotations>
@@ -733,6 +773,51 @@
             </Annotations>
             <Annotations Target="cds_zui_fleet_lk_o4.FleetLKType/to_PartsLK" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Composition"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/ConditionText" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/DraftEntityCreationDateTime" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/DraftEntityLastChangeDateTime" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/HasActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/HasDraftEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/InspectionDue" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/IsActiveEntity" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/LastChangedAt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/LocalCreatedAt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/LocalCreatedBy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/LocalLastChangedAt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/LocalLastChangedBy" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/ParentUuid" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/PartName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/Uuid" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.ComputedDefaultValue"/>
             </Annotations>
             <Annotations Target="cds_zui_fleet_lk_o4.cds_zui_fleet_lk_o4_Entities/I_DraftAdministrativeData" xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.DeleteRestrictions">

@@ -1,0 +1,45 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+	
+    <Dialog id="editPartDialog" title="Edit Status">
+
+        <content>
+            <form:SimpleForm
+                id="editFormDialog1"
+                editable="true">
+
+                <form:content>
+
+
+                    <Label id="_IDGenLabel34" text="Part Name" />
+                    <Input id="partNameIDInput1" value="{partsDetailsModel>PartName}" editable="true" />
+
+                    <Label id="_IDGenLabel55" text="Inspection Due" required="true" labelFor="inspection_due"/>
+				    <DatePicker
+                        id="inspection_due1"
+                        value="{ path: 'partsDetailsModel>/InspectionDue', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'yyyy-MM-dd'} }"/>
+                        
+                    <InputListItem id="_IDGenInputListItem33" label="Condition">
+                        <Select id="conditionIDInput33" selectedKey="{partsDetailsModel>Status}">
+                            <core:Item id="_IDGenItem93" key="OK" text="OK" />
+                            <core:Item id="_IDGenItem932" key="Required Maintenance" text="Required Maintenance" />
+                            <core:Item id="_IDGenItem9132" key="Replace Required" text="Replace Required" />
+                        </Select>
+                    </InputListItem>
+
+                </form:content>
+            </form:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button id="_IDGenButton3" text="Save" press=".onSaveEditRecord" />
+        </beginButton>
+
+        <endButton>
+            <Button id="_IDGenButton33" text="Cancel" press=".onCancelEditRecord" />
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>

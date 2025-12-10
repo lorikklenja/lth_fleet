@@ -72,11 +72,10 @@
                         items="{path: 'fleetDataModel>/'}">
                         
                         <columns>
-                            <Column id="_IDGenColumn111"><Text id="_IDGenText32" text="ID" /></Column>
+                            <Column id="_IDGenColumn111"><Text id="_IDGenText354" text="ID" /></Column>
                             <Column id="_IDGenColumn8"><Text id="_IDGenText14" text="{i18n>registration}" /></Column>
                             <Column id="_IDGenColumn9"><Text id="_IDGenText15" text="{i18n>model}" /></Column>
-                            <Column id="_IDGenColumn11"><Text id="_IDGenText17" text="{i18n>lastInspection}" /></Column>
-                            <Column id="_IDGenColumn12"><Text id="_IDGenText18" text="{i18n>totalHours}" /></Column>
+                            <Column id="_IDGenColumn141"><Text id="_IDGenText17" text="{i18n>lastInspection}" /></Column>
                             <Column id="_IDGenColumn10"><Text id="_IDGenText16" text="{i18n>status}" /></Column>
                             <Column id="_IDGenColumn33"><Text id="_IDGenText33" text="{i18n>fleet_created_at}" /></Column>
                         </columns>
@@ -87,11 +86,10 @@
                                 <cells>
                                     <Text id="_IDGenText44" text="{fleetDataModel>UUID}" />
                                     <Text id="_IDGenText19" text="{fleetDataModel>Registration}" wrapping="false" />
-                                    <Text id="_IDGenText20" text="{fleetDataModel>Model}" wrapping="false"/>
-                                    <Text id="_IDGenText21" text="{path: 'fleetDataModel>LastInspection', formatter:'.formatter.formatDate'}" wrapping="false"/>
-                                    <Text id="_IDGenText22" text="{fleetDataModel>TotalHours}" wrapping="false"/>
-                                    <Text id="_IDGenText23" text="{fleetDataModel>Status}" />
-                                    <Text id="_IDGenText24" text="{path: 'fleetDataModel>LocalCreatedAt', formatter:'.formatter.formatDateSince'}" />
+                                    <Text id="_IDGenText240" text="{fleetDataModel>Model}" wrapping="false"/>
+                                    <Text id="_IDGenText241" text="{path: 'fleetDataModel>LastInspection', formatter:'.formatter.formatDate'}" wrapping="false"/>
+                                    <Text id="_IDGenText243" text="{fleetDataModel>Status}" />
+                                    <Text id="_IDGenText244" text="{path: 'fleetDataModel>LocalCreatedAt', formatter:'.formatter.formatDateSince'}" />
                                 </cells>
                             </ColumnListItem>
                         </items>

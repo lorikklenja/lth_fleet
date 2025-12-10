@@ -104,12 +104,21 @@
           "target": [
             "TargetFleetLK"
           ]
+        },
+        {
+          "pattern": "PartDetails/{UUID}",
+          "name": "PartDetails",
+          "target": "PartDetails"
         }
       ],
       "targets": {
         "TargetFleetLK": {
           "id": "FleetLK",
           "name": "FleetLK"
+        },
+        "PartDetails": {
+          "id": "PartDetails",
+          "name": "PartDetails"
         }
       }
     },

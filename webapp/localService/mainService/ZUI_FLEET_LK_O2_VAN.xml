@@ -97,6 +97,9 @@
             <Annotations Target="cds_zui_fleet_lk_o4.FleetLKType/Update_mc">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.FleetLKType/to_PartsLK_oc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
             <Annotations Target="cds_zui_fleet_lk_o4.FleetLKType">
                 <Annotation Term="UI.Facets">
                     <Collection>
@@ -276,6 +279,12 @@
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
             <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/LastChangedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType/Update_mc">
                 <Annotation Term="UI.Hidden"/>
             </Annotations>
             <Annotations Target="cds_zui_fleet_lk_o4.PartsLKType">

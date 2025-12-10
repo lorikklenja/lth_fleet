@@ -89,7 +89,12 @@ sap.ui.define([
         },
 
         onRowPress(oEvent) {
-            
+            const oSelectedItem = oEvent.getSource();
+            const oContext = oSelectedItem.getBindingContext("fleetDataModel");
+            const uuid = oContext.getProperty("UUID");
+
+            const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("PartDetails", { UUID: uuid });
         },
 
         onAddNewRecord: function () {

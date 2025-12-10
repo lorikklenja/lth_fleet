@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+	<Dialog id="createPartDialog" title="Create new part">
+        <content>
+            <form:SimpleForm id="simpleFormPartCreateDialog">
+                <form:content>
+                    <Label id="_IDGenLabel3" text="Part Name" required="true" />
+                    <Input id="partNameIDInput" editable="true" />
+
+                    <Label id="_IDGenLabel5" text="Inspection Due" required="true" labelFor="inspection_due"/>
+				    <DatePicker
+                        id="inspection_due"
+                        placeholder="Enter Date"
+                        class="sapUiSmallMarginBottom"/>
+                        
+                    <InputListItem id="_IDGenInputListItem3" label="Condition">
+                        <Select id="conditionIDInput">
+                            <core:Item id="_IDGenItem9" key="OK" text="OK" />
+                        </Select>
+                    </InputListItem>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="createUpd1" text="Create" press=".onCreateNewRecord" />
+        </beginButton>
+        <endButton>
+            <Button id="cancelUpd1" text="Cancel" press=".onCancelRecord" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
