@@ -156,6 +156,31 @@ sap.ui.define([
             });
         },
 
+        onDeletePart: function (oEvent) {
+            MessageBox.confirm("Delete this part?", {
+                onClose: (action) => {
+                    if (action === "OK") {
+                        const oDataModel = this.getOwnerComponent().getModel();
+                        const oItem = oEvent.getSource().getParent(); 
+                        const oCtx = oItem.getBindingContext("partsDetailsModel");
+                        const partuuid = oCtx.getProperty("Uuid")
+                        const ParentUuid = oCtx.getProperty("ParentUuid");
+                        const sPath = `/PartsLK(Uuid=guid'${partuuid}',ParentUuid=guid'${ParentUuid}',IsActiveEntity=true)`;
+                        
+                        oDataModel.remove(sPath, {
+                            success: () => {
+                                MessageToast.show("Part Deleted Successfully");
+                                this._loadPartDetails();
+                            },
+                            error: (error) => {
+                                MessageToast.show("Error deleting part");
+                            }
+                        });
+                    }
+                }
+            });
+        },
+
         onCancelRecord: function () {
             this.oDialog.close();
         },

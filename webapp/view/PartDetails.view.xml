@@ -108,7 +108,7 @@
 										<m:Button id="_IDGenButton2" 
 											icon="sap-icon://delete" 
 											type="Reject" 
-											press=".onDeleteDetail" />
+											press=".onDeletePart" />
 									</m:cells>
 								</m:ColumnListItem>
 							</m:items>
